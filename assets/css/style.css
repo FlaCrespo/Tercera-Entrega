@@ -1,0 +1,809 @@
+
+/* variables */
+
+:root{
+    --principal: rgb(252, 252, 252);
+    --secondary: ;
+    --font-primary: "Hubballi";
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+ul{
+    list-style-type: none;
+}
+/* HELPERS */
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1080;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.navbar{
+    min-height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.menu{
+    flex-basis: 60%;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0.5em;
+}
+
+.menu__li{
+    border: 2px solid rgba(132, 187, 187, 0.288);
+    border-radius: 4px;
+    transition: .5 ease-in-out;
+}
+.menu__li:hover{
+    border: 2px solid var(--principal);
+}
+
+.menu__link{
+    color: var(--principal);
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    padding: .5em;
+    background-color: rgba(132, 187, 187, 0.288);
+    border-radius: 4px;
+}
+/* MAIN INDEX */
+.presentacion{
+    height: 100vh;
+}
+.presentacion__1{
+    color:whitesmoke;
+    position:absolute;
+    top: 30rem;
+    left: 4rem;
+    width: 70rem;
+    height: 25rem;
+    background-position: right;
+    display:inline-block
+}
+.presentacion__titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 5em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    animation-duration: 5s;
+    animation-name: desplazar-titulo;
+}
+@keyframes desplazar-titulo{
+    from{
+        margin-left: -200%;
+        width: 200%;
+    }
+    to{
+        margin-left: 0.5%;
+        width: 100%;
+    }
+}
+.presentacion__parrafo{
+    font-family: "Fredoka";
+    font-size: 3em;
+    text-align: center;
+    width: 65rem;
+    padding: 2rem;
+    animation-duration: 5s;
+    animation-name: aparecer;
+}
+@keyframes aparecer{
+    from{
+        margin-left: -200%;
+        width: 200%;
+    }
+    to{
+        margin-left: 0.5%;
+        width: 100%;
+    }
+}
+
+/* FOOTER GLOBAL */
+
+footer .pie{
+    display: grid;
+    grid-template-areas: "div div div div div";
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 1em;
+    color: white;
+    font-family: var(--font-primary);
+}
+footer .contacto1 .mapa{
+    position: relative; 
+    top: 20px;
+}
+footer .contacto2{
+    position: relative; 
+    top: 60px;
+    text-align: center;
+    align-items: center;
+}
+
+footer .pie__titulo{
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+footer .pie__descripcion{
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+footer .pie__mail{
+    color: var(--principal);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+footer .contacto3{
+    position: relative; 
+    top: 60px;
+}
+footer .contacto4{
+    position: relative; 
+    top: 60px;
+}
+footer .contacto5{
+    position: relative;
+    top: 60px;
+}
+
+
+/* IMAGENES Y FONDOS */
+
+.presentacion__sublogo{
+    width: 20%;
+    margin-top: 0px;
+    margin-left: 25rem;
+    animation: rotacion-sublogo 8s infinite alternate cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes rotacion-sublogo{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+header{
+    background-color: rgba(0, 0, 255, 0.26);
+    background-image: url(../img/Foto_encabezado_y_pie.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 1rem;
+}
+
+.presentacion{
+    background-color: rgba(0, 255, 128, 0.356);
+    background-image: url(../img/Fondo_de_presentación.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 32vh;
+}
+
+footer{
+    background-color: rgba(0, 0, 255, 0.26);
+    background-image: url(../img/Foto_encabezado_y_pie.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+}
+
+.ubicacion{
+    position: relative;
+    top: -2.5rem;
+    left: 0.4rem;
+}
+.telefono{
+    position: relative;
+    top: -2.5rem;
+    left: 1rem;
+}
+.mail{
+    position: relative;
+    top: -2.5rem;
+    left: 4rem;
+ }
+ .social__ig{
+     padding: 0 2em;
+ }
+
+/* PLAN DE TRABAJO */
+.plan{
+    display: grid;
+    grid-template-rows: repeat(3 , auto);
+    grid-template-areas: 
+    "propuesta__titulo"
+    "propuesta"
+    "propuesta__img";
+    background-color: white;
+}
+.propuesta__titulo{
+    color:rgb(14, 29, 97);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    grid-area: propuesta__titulo;
+    text-align: center;
+    padding: 0.5em 0;
+}
+.propuesta {
+    grid-area: propuesta;
+    display: grid;
+    grid-template-columns: repeat(2 , auto);
+    grid-template-rows: repeat(2 , auto);
+    grid-row-gap: 4vh;
+    grid-column-gap: 8vh;
+    margin: 0 2em;
+    grid-template-areas: 
+    "propuesta__preguntaUno propuesta__preguntaDos"
+    "propuesta__preguntaTres propuesta__preguntaCuatro";
+}
+.propuesta__pregunta--subtitulo{
+    color:rgb(12, 212, 226);
+    font-family: "Hubballi";
+    font-size: 3.2rem;
+    padding: 0.5em 0;
+    
+}
+.propuesta__pregunta--respuesta{
+    color:black;
+    font-family: "Hubballi";
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align:justify;
+}
+.propuesta__preguntaUno{
+    grid-area: propuesta__preguntaUno;
+}
+.propuesta__preguntaDos{
+    grid-area: propuesta__preguntaDos;
+}
+.propuesta__preguntaTres{
+    grid-area: propuesta__preguntaTres;
+}
+.propuesta__preguntaCuatro{
+    grid-area: propuesta__preguntaCuatro;
+}
+.propuesta__img{
+    grid-area: propuesta__img;
+    justify-self: center;
+    padding: 1em 0;
+}
+
+/* NOSOTROS */
+.explicacion{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(2 , auto);
+    grid-gap: 1vh;
+    grid-template-areas: 
+    "nosotros__titulo nosotros__titulo nosotros__titulo nosotros__titulo"
+    "nosotros__parrafo nosotros__parrafo nosotros__parrafo nosotros__parrafo";
+}
+.valores{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(3 , auto);
+    grid-gap: 1vh;
+    grid-template-areas:                     
+    "nosotros__subtitulo nosotros__subtitulo nosotros__subtitulo nosotros__subtitulo"
+    "nosotros__img1 nosotros__img2 nosotros__img3 nosotros__img4"
+    "nos__prin nos__prin nos__prin nos__prin";
+}
+
+
+.nosotros__titulo{
+    color:rgb(14, 29, 97);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    grid-area: nosotros__titulo;
+    text-align: center;
+    padding: 0.5em 0;
+}
+.nosotros__parrafo{
+    color:rgb(20, 46, 161);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    line-height: 3rem;
+    grid-area: nosotros__parrafo;
+    text-align: justify;
+    padding: 0 3em;
+}
+.nosotros__subtitulo{
+    color:rgb(14, 29, 97);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3.2rem;
+    grid-area: nosotros__subtitulo;
+    text-align: center;
+    padding: 2em 0 1em 0;
+}
+.nos__prin{
+    list-style: none;
+    color:rgb(20, 46, 161);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    grid-area: nos__prin;
+    justify-content: space-between;
+    padding: 2em 1.5em 1em 1.5em;
+}
+.nos__prin--li{
+    padding: 0.5em 2em;
+    text-align: center;
+}
+
+.nosotros__img1{  
+    grid-area: nosotros__img1;
+    width: 30%;
+    justify-self: center;
+}
+.nosotros__img2{ 
+    grid-area: nosotros__img2;
+    width: 30%;
+    justify-self: center;
+}
+.nosotros__img3{ 
+    grid-area: nosotros__img3;
+    width: 30%;
+    justify-self: center;
+}
+.nosotros__img4{
+    grid-area: nosotros__img4;
+    width: 30%;
+    justify-self: center;
+}
+
+ /* CONTACTO */
+.formulario{
+    background-color: gray;
+    background-image: url(../img/Fondo_contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+
+}
+.formulario__titulo{
+    color: black;
+    font-family: "Fredoka";
+    font-size: 5rem;
+    display:inline-block;
+    position: relative;
+    left: 10px;
+    bottom: 310px;
+}
+.formulario__comentario{
+    color: black;
+    font-family: "Hubballi";
+    font-size: 2.7rem;
+    display:inline-block;
+    position: relative;
+    right: 130px;
+    top: -260px;
+}
+.formulario__preguntas{
+    display:inline-block;
+    position: relative;
+    right: 125px;
+    top: 120px;
+}
+.formulario__preguntas--completar{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    background-color: rgba(81, 83, 126, 0.514);
+    border: 5px solid rgb(24, 31, 88);
+}
+.formulario__preguntas--boton{
+    color: rgb(233, 234, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: rgb(85, 86, 92);
+    border: 5px solid rgb(85, 86, 92);
+    margin-left: 10px;
+}
+
+/* SERVICIOS */
+.servicios{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas:
+    "servicios__titulo servicios__titulo servicios__titulo servicios__titulo"
+    "serv__img1 serv__img2 serv__img3 serv__img4";
+    grid-column-gap: 5vh;
+    margin: 0 0 5vh 0;
+    justify-self: center;
+}
+.servicios__titulo{
+    color:rgb(14, 29, 97);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    grid-area: servicios__titulo;
+    text-align: center;
+    padding: 0.5em 0;
+}
+.serv__img1{
+    grid-area: serv__img1;
+}
+.serv__img1:hover{
+    transform: scale(1.2);
+}
+.serv__img2{
+    grid-area: serv__img2;
+}
+.serv__img2:hover{
+    transform: scale(1.2);
+}
+.serv__img3{
+    grid-area: serv__img3;
+}
+.serv__img3:hover{
+    transform: scale(1.2);
+}
+.serv__img4{
+    grid-area: serv__img4;
+}
+.serv__img4:hover{
+    transform: scale(1.2);
+}
+/* SERVICIOS - CONFIGURACIÓN INDIVIDUAL */
+/* INGENIERIA AMBIENTAL */
+.ing_amb{
+    background-color: rgba(212, 209, 209, 0.678);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "ing_amb__principal ing_amb__principal ing_amb__principal ing_amb__principal"
+    "ing_amb1 ing_amb2 ing_amb3 ing_amb4"
+    ;
+    grid-column-gap: 8vh;
+    text-align: center;
+    justify-self: center;
+}
+.ing_amb__principal{
+    grid-area: ing_amb__principal;
+}
+.ing_amb1{
+    grid-area: ing_amb1;
+    margin: 1em;
+}
+.ing_amb2{
+    grid-area: ing_amb2;
+    margin: 1em;
+}
+.ing_amb3{
+    grid-area: ing_amb3;
+    margin: 1em;
+}
+.ing_amb4{
+    grid-area: ing_amb4;
+    margin: 1em;
+}
+.ing_amb__parrafo{
+    text-align: left;
+    margin-top: 1em;
+    background-color: rgba(7, 8, 68, 0.603);
+    line-height: 1.5em;
+    width: 13em;
+}
+
+/* LABORATORIO AMBIENTAL */
+.lab_amb{
+    background-color: rgba(212, 209, 209, 0.678);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal"
+    ". lab_amb1 . lab_amb2 . lab_amb3 ."
+    ". lab_amb4 . lab_amb5 . lab_amb6 ."
+    ;
+    grid-column-gap: 8vh;
+    text-align: center;
+    justify-self: center;
+}
+.lab_amb__principal{
+    grid-area: lab_amb__principal;
+}
+.lab_amb1{
+    grid-area: lab_amb1;
+    margin: 1em;
+}
+.lab_amb2{
+    grid-area: lab_amb2;
+    margin: 1em;
+}
+.lab_amb3{
+    grid-area: lab_amb3;
+    margin: 1em;
+}
+.lab_amb4{
+    grid-area: lab_amb4;
+    margin: 1em;
+}
+.lab_amb5{
+    grid-area: lab_amb5;
+    margin: 1em;
+}
+.lab_amb6{
+    grid-area: lab_amb6;
+    margin: 1em;
+}
+.lab_amb__parrafo{
+    text-align: left;
+    margin-top: 1em;
+    background-color: rgba(7, 8, 68, 0.603);
+    line-height: 1.5em;
+    width: 13em;
+}
+/* INGENIERIA LABORAL */
+.ing_lab{
+    background-color: rgba(212, 209, 209, 0.678);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "ing_lab__principal ing_lab__principal ing_lab__principal ing_lab__principal"
+    "ing_lab1 ing_lab2 ing_lab3 ing_lab4"
+    ;
+    grid-column-gap: 8vh;
+    text-align: center;
+    justify-self: center;
+}
+.ing_lab__principal{
+    grid-area: ing_lab__principal;
+}
+.ing_lab1{
+    grid-area: ing_lab1;
+    margin: 1em;
+}
+.ing_lab2{
+    grid-area: ing_lab2;
+    margin: 1em;
+}
+.ing_lab3{
+    grid-area: ing_lab3;
+    margin: 1em;
+}
+.ing_lab4{
+    grid-area: ing_lab4;
+    margin: 1em;
+}
+.ing_lab__parrafo{
+    text-align: left;
+    margin-top: 1em;
+    background-color: rgba(7, 8, 68, 0.603);
+    line-height: 1.5em;
+}
+/* MEDICIONES LABORALES */
+.lab_med{
+    background-color: rgba(212, 209, 209, 0.678);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "lab_med__principal lab_med__principal lab_med__principal lab_med__principal lab_med__principal lab_med__principal lab_med__principal"
+    ". lab_med1 . lab_med2 . lab_med3 ."
+    ". lab_med4 . lab_med5 . lab_med6 ."
+    ;
+    grid-column-gap: 8vh;
+    text-align: center;
+    justify-self: center;
+}
+.lab_med__principal{
+    grid-area: lab_med__principal;
+}
+.lab_med1{
+    grid-area: lab_med1;
+    margin: 1em;
+}
+.lab_med2{
+    grid-area: lab_med2;
+    margin: 1em;
+}
+.lab_med3{
+    grid-area: lab_med3;
+    margin: 1em;
+}
+.lab_med4{
+    grid-area: lab_med4;
+    margin: 1em;
+}
+.lab_med5{
+    grid-area: lab_med5;
+    margin: 1em;
+}
+.lab_med6{
+    grid-area: lab_med6;
+    margin: 1em;
+}
+.lab_med__parrafo{
+    text-align: left;
+    margin-top: 1em;
+    background-color: rgba(7, 8, 68, 0.603);
+    line-height: 1.5em;
+    width: 13em;
+}
+
+/* MEDIA */
+@media screen and (max-width: 768px){
+    header{
+        padding: 2em 0;
+    }
+
+    header .navbar{
+        flex-direction: column;
+        justify-content: center;   
+    }
+    header .menu{
+        width: 80%;
+    }
+    header .menu__li .menu__link{
+        font-size: 1.5rem;
+        padding: 0.5em;
+    }
+
+    .presentacion{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    footer .pie{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .propuesta {
+        grid-area: propuesta;
+        display: grid;
+        grid-template-columns: repeat(1 , auto);
+        grid-template-rows: repeat(4 , auto);
+        grid-row-gap: 20px;
+        grid-column-gap: 40px;
+        margin: 0 15em 0 5em;
+        grid-template-areas: 
+        "propuesta__preguntaUno" 
+        "propuesta__preguntaDos"
+        "propuesta__preguntaTres"
+        "propuesta__preguntaCuatro";
+    }
+    .servicios{
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(1, auto);
+        grid-template-areas:
+        "servicios__titulo"
+        "serv__img1"
+        "serv__img2"
+        "serv__img3"
+        "serv__img4";
+        grid-row-gap: 3vh;
+        margin: 0 0 5vh 0;
+        text-align: center;
+    }
+    .ing_amb{
+        background-color: rgba(212, 209, 209, 0.678);
+        color: white;
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "ing_amb__principal ing_amb__principal  ing_amb__principal  ing_amb__principal  ing_amb__principal"
+        ". ing_amb1 . ing_amb2 ."
+        ". ing_amb3 . ing_amb4."
+        ;
+        grid-column-gap: 5vh;
+        grid-row-gap: 8vh;
+        text-align: center;
+        justify-self: center;
+    }
+    .ing_amb__parrafo{
+        width: 13em;
+    }
+    .ing_lab{
+        background-color: rgba(212, 209, 209, 0.678);
+        color: white;
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "ing_lab__principal ing_lab__principal  ing_lab__principal  ing_lab__principal  ing_lab__principal"
+        ". ing_lab1 . ing_lab2 ."
+        ". ing_lab3 . ing_lab4."
+        ;
+        grid-column-gap: 5vh;
+        grid-row-gap: 8vh;
+        text-align: center;
+        justify-self: center;
+    }
+    .ing_lab__parrafo{
+        width: 13em;
+    }
+    .lab_amb{
+        background-color: rgba(212, 209, 209, 0.678);
+        color: white;
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal lab_amb__principal"
+        ". lab_amb1 . lab_amb2 ."
+        ". lab_amb3 . lab_amb4 ."
+        ". lab_amb5 . lab_amb6 ."
+        ;
+        grid-column-gap: 8vh;
+        text-align: center;
+        justify-self: center;
+    }
+    .lab_med{
+        background-color: rgba(212, 209, 209, 0.678);
+        color: white;
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "lab_med__principal lab_med__principal lab_med__principal lab_med__principal lab_med__principal"
+        ". lab_med1 . lab_med2 ."
+        ". lab_med3 . lab_med4 ."
+        ". lab_med5 . lab_med6 ."
+        ;
+        grid-column-gap: 8vh;
+        text-align: center;
+        justify-self: center;
+    }
+}
